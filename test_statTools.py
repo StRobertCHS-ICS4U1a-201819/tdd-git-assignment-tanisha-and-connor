@@ -9,3 +9,5 @@ def test_mean_empty():
     with pytest.raises(ValueError) as errmsg:
         avgMean([])
     assert("Illegal empty list" == str(errmsg.value))
+def test_mean_corner():
+    assert(avgMean([0,1000]) == 500)
