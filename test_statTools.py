@@ -13,3 +13,5 @@ def test_mean_corner():
     assert (avgMean([0,1000]) == 500)
 def test_mean_negative():
     assert(avgMean([-200,-100,0,5,500]) == 41)
+def test_mean_decmials():
+    assert(avgMean([2.0, 9, 5.5, 2.1]) == 4.65)
