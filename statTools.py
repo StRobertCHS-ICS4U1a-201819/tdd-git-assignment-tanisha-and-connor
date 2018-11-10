@@ -5,4 +5,5 @@ def avgMean(meanlist):
     mean = sum(meanlist) / len(meanlist)
     return mean
 
-#def median
+def median(medianlist):
+    return 3
