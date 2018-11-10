@@ -18,3 +18,5 @@ def test_mean_decmials():
 
 def test_median_basic1():
     assert(median([1, 2, 3, 4, 10]) == 3)
+def test_median_basic2():
+    assert(median([2, 4, 5, 10, 20]) == 5)
