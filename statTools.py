@@ -1,2 +1,3 @@
 def avgMean(mylist):
-    return 30
+    mean = sum(mylist) / len(mylist)
+    return mean
