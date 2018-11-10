@@ -7,7 +7,6 @@ def avgMean(meanlist):
 
 def median(medianlist):
     medianlist.sort()
-    length = len(medianlist)
-    middle = int(length / 2)
+    middle = int(len(medianlist) / 2)
     median = medianlist[middle]
     return median
