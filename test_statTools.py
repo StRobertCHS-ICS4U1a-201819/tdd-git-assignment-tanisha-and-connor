@@ -10,4 +10,6 @@ def test_mean_empty():
         avgMean([])
     assert("Illegal empty list" == str(errmsg.value))
 def test_mean_corner():
-    assert(avgMean([0,1000]) == 500)
+    assert (avgMean([0,1000]) == 500)
+def test_mean_negative():
+    assert(avgMean([-200,-100,0,5,500]) == 41)
