@@ -62,3 +62,5 @@ def test_variance_negative():
     assert("Illegal negative mean" == str(errmsg.value))
 def test_variance_negative2():
     assert(avgvariance([-2, 4, 8, 10]) == 21)
+def test_variance_decimal():
+    assert(avgvariance([3, 4]) == 0.25)
