@@ -64,3 +64,5 @@ def test_variance_negative2():
     assert(avgvariance([-2, 4, 8, 10]) == 21)
 def test_variance_decimal():
     assert(avgvariance([3, 4]) == 0.25)
+def test_variance_repeating():
+    assert(avgvariance([20, 20, 20, 20, 20, 20, 20]) == 0)
