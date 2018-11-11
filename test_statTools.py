@@ -51,3 +51,5 @@ def test_varinace_empty():
     assert("Illegal empty list" == str(errmsg.value))
 def test_variance_corner():
     assert(avgvariance([0]) == 0)
+def test_variance_one():
+    assert(avgvariance([100000]) == 0)
