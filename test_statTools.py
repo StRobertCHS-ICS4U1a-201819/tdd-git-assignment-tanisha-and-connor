@@ -45,3 +45,7 @@ def test_variance_basic1():
     assert(avgvariance([45, 20, 15, 75, 100]) == 1054)
 def test_variance_basic2():
    assert(avgvariance([0, 20, 40, 20]) == 200)
+def test_varinace_empty():
+    with pytest.raises(ValueError) as errmsg:
+        avgvariance([])
+    assert("Illegal empty list" == str(errmsg.value))
