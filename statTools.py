@@ -25,12 +25,11 @@ def avgvariance(variancelist):
     if len(variancelist) == 0:
         raise ValueError("Illegal empty list")
     pass
-    mean = sum(variancelist) / len(variancelist)
-    if mean < 0:
+    if avgMean(variancelist) < 0:
         raise ValueError("Illegal negative mean")
     pass
     for i in range(len(variancelist)):
-        count += (mean - (variancelist[i]))**2
+        count += (avgMean(variancelist) - (variancelist[i]))**2
     variance = count / len(variancelist)
     return variance
 
