@@ -30,3 +30,5 @@ def test_median_evenlist():
     assert(median([500, 5, 65, 70, 100, 200]) == 85)
 def test_mean_corner():
     assert(median([0,1000000]) == 500000)
+def test_median_negative():
+    assert(median([-5, -30, -1, 0]) == -3)
