@@ -28,3 +28,5 @@ def test_median_empty():
     assert ("Illegal empty list" == str(errmsg.value))
 def test_median_evenlist():
     assert(median([500, 5, 65, 70, 100, 200]) == 85)
+def test_mean_corner():
+    assert(median([0,1000000]) == 500000)
