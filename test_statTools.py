@@ -60,3 +60,5 @@ def test_variance_negative():
     with pytest.raises(ValueError) as errmsg:
         avgvariance([-50, -100, 20])
     assert("Illegal negative mean" == str(errmsg.value))
+def test_variance_negative2():
+    assert(avgvariance([-2, 4, 8, 10]) == 21)
