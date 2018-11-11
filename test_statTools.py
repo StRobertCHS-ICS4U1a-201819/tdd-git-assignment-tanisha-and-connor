@@ -2,7 +2,7 @@ import pytest
 from statTools import *
 
 def test_mean_basic1():
-    assert(avgMean([10, 20, 30, 40, 50]) == 30)
+    assert(avgMean([30, 10, 20, 40, 50]) == 30)
 def test_mean_basic2():
     assert(avgMean([5, 10, 15, 50]) == 20)
 def test_mean_empty():
@@ -20,26 +20,28 @@ def test_mean_one():
 
 
 def test_median_basic1():
-    assert(median([1, 2, 3, 4, 10]) == 3)
+    assert(avgmedian([1, 2, 3, 4, 10]) == 3)
 def test_median_basic2():
-    assert(median([2, 4, 5, 10, 20]) == 5)
+    assert(avgmedian([2, 4, 5, 10, 20]) == 5)
 def test_median_unsorted():
-    assert(median([100, 4, 21, 75, 34]) == 34)
+    assert(avgmedian([100, 4, 21, 75, 34]) == 34)
 def test_median_empty():
     with pytest.raises(ValueError) as errmsg:
-        median([])
+        avgmedian([])
     assert ("Illegal empty list" == str(errmsg.value))
 def test_median_evenlist():
-    assert(median([500, 5, 65, 70, 100, 200]) == 85)
+    assert(avgmedian([500, 5, 65, 70, 100, 200]) == 85)
 def test_mean_corner():
-    assert(median([0]) == 0)
+    assert(avgmedian([0]) == 0)
 def test_median_negative():
-    assert(median([-5, -30, -1, 0]) == -3)
+    assert(avgmedian([-5, -30, -1, 0]) == -3)
 def test_median_one():
-    assert(median([4]) == 4)
+    assert(avgmedian([4]) == 4)
 def test_median_decimal():
-    assert(median([-5, 3, 4, 10]) == 3.5)
+    assert(avgmedian([-5, 3, 4, 10]) == 3.5)
 
 
-def test_variance_bascic():
-    assert(variance([45, 20, 15, 75, 100] == 1054))
+def test_variance_basic1():
+    assert(avgvariance([45, 20, 15, 75, 100]) == 1054)
+def test_variance_basic2():
+   assert(avgvariance([0, 20, 40, 20]) == 200)

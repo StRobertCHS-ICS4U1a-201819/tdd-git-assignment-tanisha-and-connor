@@ -5,7 +5,7 @@ def avgMean(meanlist):
     mean = sum(meanlist) / len(meanlist)
     return mean
 
-def median(medianlist):
+def avgmedian(medianlist):
     if len(medianlist) == 0:
         raise ValueError("Illegal empty list")
     pass
@@ -20,5 +20,12 @@ def median(medianlist):
     return median
 
 
-def variance(variancelist):
-    return 1054
+def avgvariance(variancelist):
+    count = 0
+    mean = sum(variancelist) / len(variancelist)
+
+    for i in range(len(variancelist)):
+        count += (mean - (variancelist[i]))**2
+    variance = count / len(variancelist)
+    return variance
+
