@@ -10,7 +10,7 @@ def test_mean_empty():
         avgMean([])
     assert("Illegal empty list" == str(errmsg.value))
 def test_mean_corner():
-    assert (avgMean([0,1000]) == 500)
+    assert (avgMean([0]) == 0)
 def test_mean_negative():
     assert(avgMean([-200, -100, 0, 5, 500]) == 41)
 def test_mean_decmials():
@@ -32,6 +32,8 @@ def test_median_empty():
 def test_median_evenlist():
     assert(median([500, 5, 65, 70, 100, 200]) == 85)
 def test_mean_corner():
-    assert(median([0,1000000]) == 500000)
+    assert(median([0]) == 0)
 def test_median_negative():
     assert(median([-5, -30, -1, 0]) == -3)
+def test_median_one():
+    assert(median([4]) == 4)
