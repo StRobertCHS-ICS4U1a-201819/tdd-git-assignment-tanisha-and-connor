@@ -37,3 +37,5 @@ def test_median_negative():
     assert(median([-5, -30, -1, 0]) == -3)
 def test_median_one():
     assert(median([4]) == 4)
+def test_median_decimal():
+    assert(median([-5, 3, 4, 10]) == 3.5)
