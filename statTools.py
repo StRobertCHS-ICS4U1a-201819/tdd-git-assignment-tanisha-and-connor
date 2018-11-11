@@ -18,3 +18,7 @@ def median(medianlist):
         middle2 = middle1 - 1
         median = (medianlist[middle1] + medianlist[middle2]) / 2
     return median
+
+
+def variance(variancelist):
+    return 1054

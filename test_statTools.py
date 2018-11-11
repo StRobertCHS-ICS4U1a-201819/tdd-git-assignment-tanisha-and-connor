@@ -39,3 +39,7 @@ def test_median_one():
     assert(median([4]) == 4)
 def test_median_decimal():
     assert(median([-5, 3, 4, 10]) == 3.5)
+
+
+def test_variance_bascic():
+    assert(variance([45, 20, 15, 75, 100] == 1054))
