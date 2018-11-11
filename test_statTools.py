@@ -1,5 +1,8 @@
 import pytest
+import math
 from statTools import *
+
+
 
 def test_mean_basic1():
     assert(avgMean([30, 10, 20, 40, 50]) == 30)
@@ -53,3 +56,7 @@ def test_variance_corner():
     assert(avgvariance([0]) == 0)
 def test_variance_one():
     assert(avgvariance([100000]) == 0)
+def test_variance_negative():
+    with pytest.raises(ValueError) as errmsg:
+        avgvariance([-50, -100, 20])
+    assert("Illegal negative mean" == str(errmsg.value))
