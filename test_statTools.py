@@ -26,3 +26,5 @@ def test_median_empty():
     with pytest.raises(ValueError) as errmsg:
         median([])
     assert ("Illegal empty list" == str(errmsg.value))
+def test_median_evenlist():
+    assert(median([500, 5, 65, 70, 100, 200]) == 85)

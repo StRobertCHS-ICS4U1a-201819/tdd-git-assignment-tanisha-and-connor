@@ -10,6 +10,11 @@ def median(medianlist):
         raise ValueError("Illegal empty list")
     pass
     medianlist.sort()
-    middle = int(len(medianlist) / 2)
-    median = medianlist[middle]
+    if len(medianlist) % 2 == 1:
+        middle = int(len(medianlist) / 2)
+        median = medianlist[middle]
+    else:
+        middle1 = int(len(medianlist) / 2)
+        middle2 = middle1 - 1
+        median = (medianlist[middle1] + medianlist[middle2]) / 2
     return median
