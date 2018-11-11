@@ -49,3 +49,5 @@ def test_varinace_empty():
     with pytest.raises(ValueError) as errmsg:
         avgvariance([])
     assert("Illegal empty list" == str(errmsg.value))
+def test_variance_corner():
+    assert(avgvariance([0]) == 0)
