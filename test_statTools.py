@@ -15,6 +15,9 @@ def test_mean_negative():
     assert(avgMean([-200, -100, 0, 5, 500]) == 41)
 def test_mean_decmials():
     assert(avgMean([2.0, 9, 5.5, 2.1]) == 4.65)
+def test_mean_one():
+    assert(avgMean([5]) == 5)
+
 
 def test_median_basic1():
     assert(median([1, 2, 3, 4, 10]) == 3)
