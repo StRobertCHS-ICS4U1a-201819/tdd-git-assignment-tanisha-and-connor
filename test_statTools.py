@@ -85,3 +85,5 @@ def test_standarddev_negative1():
     assert("Illegal negative mean" == str(errmsg.value))
 def test_standarddev_negative2():
     assert (deviation([-2, 4, 8, 10]) == 4.58257569495584)
+def test_standarddev_repeating():
+    assert (deviation([20, 20, 20, 20, 20, 20, 20]) == 0)
