@@ -65,3 +65,10 @@ def test_variance_decimal():
     assert(avgvariance([3, 4]) == 0.25)
 def test_variance_repeating():
     assert(avgvariance([20, 20, 20, 20, 20, 20, 20]) == 0)
+
+
+def test_standarddev_basic1():
+    assert (deviation([45, 20, 15, 75, 100]) == 32.46536616149585)
+
+
+

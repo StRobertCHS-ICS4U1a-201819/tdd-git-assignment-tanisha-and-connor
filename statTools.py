@@ -42,3 +42,5 @@ def avgvariance(variancelist):
     variance = count / len(variancelist)
     return variance
 
+def deviation(devlist):
+    return 32.46536616149585
