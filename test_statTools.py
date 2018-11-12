@@ -1,89 +1,162 @@
+"""
+-----------------------------------------------------------
+Name:		test_statTools.py
+Purpose:
+use pytest to test various statistical functions
+
+Author:	Dong.C
+
+Created: 11/11/2018
+-----------------------------------------------------------
+"""
+
 import pytest
 from statTools import *
 
 
-
+# mean tests
 def test_mean_basic1():
-    assert(avgMean([30, 10, 20, 40, 50]) == 30)
+    assert (avgMean([30, 10, 20, 40, 50]) == 30)
+
+
 def test_mean_basic2():
-    assert(avgMean([5, 10, 15, 50]) == 20)
+    assert (avgMean([5, 10, 15, 50]) == 20)
+
+
 def test_mean_empty():
     with pytest.raises(ValueError) as errmsg:
         avgMean([])
-    assert("Illegal empty list" == str(errmsg.value))
+    assert ("Illegal empty list" == str(errmsg.value))
+
+
 def test_mean_corner():
     assert (avgMean([0]) == 0)
+
+
 def test_mean_negative():
-    assert(avgMean([-200, -100, 0, 5, 500]) == 41)
+    assert (avgMean([-200, -100, 0, 5, 500]) == 41)
+
+
 def test_mean_decmials():
-    assert(avgMean([2.0, 9, 5.5, 2.1]) == 4.65)
+    assert (avgMean([2.0, 9, 5.5, 2.1]) == 4.65)
+
+
 def test_mean_one():
-    assert(avgMean([5]) == 5)
+    assert (avgMean([5]) == 5)
 
 
+# median tests
 def test_median_basic1():
-    assert(avgmedian([1, 2, 3, 4, 10]) == 3)
+    assert (avgmedian([1, 2, 3, 4, 10]) == 3)
+
+
 def test_median_basic2():
-    assert(avgmedian([2, 4, 5, 10, 20]) == 5)
+    assert (avgmedian([2, 4, 5, 10, 20]) == 5)
+
+
 def test_median_unsorted():
-    assert(avgmedian([100, 4, 21, 75, 34]) == 34)
+    assert (avgmedian([100, 4, 21, 75, 34]) == 34)
+
+
 def test_median_empty():
     with pytest.raises(ValueError) as errmsg:
         avgmedian([])
     assert ("Illegal empty list" == str(errmsg.value))
+
+
 def test_median_evenlist():
-    assert(avgmedian([500, 5, 65, 70, 100, 200]) == 85)
+    assert (avgmedian([500, 5, 65, 70, 100, 200]) == 85)
+
+
 def test_mean_corner():
-    assert(avgmedian([0]) == 0)
+    assert (avgmedian([0]) == 0)
+
+
 def test_median_negative():
-    assert(avgmedian([-5, -30, -1, 0]) == -3)
+    assert (avgmedian([-5, -30, -1, 0]) == -3)
+
+
 def test_median_one():
-    assert(avgmedian([4]) == 4)
+    assert (avgmedian([4]) == 4)
+
+
 def test_median_decimal():
-    assert(avgmedian([-5, 3, 4, 10]) == 3.5)
+    assert (avgmedian([-5, 3, 4, 10]) == 3.5)
 
 
+# variance tests
 def test_variance_basic1():
-    assert(avgvariance([45, 20, 15, 75, 100]) == 1054)
+    assert (avgvariance([45, 20, 15, 75, 100]) == 1054)
+
+
 def test_variance_basic2():
-   assert(avgvariance([0, 20, 40, 20]) == 200)
+    assert (avgvariance([0, 20, 40, 20]) == 200)
+
+
 def test_varinace_empty():
     with pytest.raises(ValueError) as errmsg:
         avgvariance([])
-    assert("Illegal empty list" == str(errmsg.value))
+    assert ("Illegal empty list" == str(errmsg.value))
+
+
 def test_variance_corner():
-    assert(avgvariance([0]) == 0)
+    assert (avgvariance([0]) == 0)
+
+
 def test_variance_one():
-    assert(avgvariance([100000]) == 0)
+    assert (avgvariance([100000]) == 0)
+
+
 def test_variance_negative():
     with pytest.raises(ValueError) as errmsg:
         avgvariance([-50, -100, 20])
-    assert("Illegal negative mean" == str(errmsg.value))
+    assert ("Illegal negative mean" == str(errmsg.value))
+
+
 def test_variance_negative2():
-    assert(avgvariance([-2, 4, 8, 10]) == 21)
+    assert (avgvariance([-2, 4, 8, 10]) == 21)
+
+
 def test_variance_decimal():
-    assert(avgvariance([3, 4]) == 0.25)
+    assert (avgvariance([3, 4]) == 0.25)
+
+
 def test_variance_repeating():
-    assert(avgvariance([20, 20, 20, 20, 20, 20, 20]) == 0)
+    assert (avgvariance([20, 20, 20, 20, 20, 20, 20]) == 0)
 
 
+# standard deviation tests
 def test_standarddev_basic1():
     assert (deviation([45, 20, 15, 75, 100]) == 32.46536616149585)
+
+
 def test_standarddev_basic2():
     assert (deviation([0, 20, 40, 20]) == 14.142135623730951)
+
+
 def test_standarddev_empty():
     with pytest.raises(ValueError) as errmsg:
         deviation([])
     assert ("Illegal empty list" == str(errmsg.value))
+
+
 def test_standarddev_corner():
-    assert(deviation([0]) == 0)
+    assert (deviation([0]) == 0)
+
+
 def test_standarddev_one():
     assert (deviation([100000]) == 0)
+
+
 def test_standarddev_negative1():
     with pytest.raises(ValueError) as errmsg:
         deviation([-50, -100, 20])
-    assert("Illegal negative mean" == str(errmsg.value))
+    assert ("Illegal negative mean" == str(errmsg.value))
+
+
 def test_standarddev_negative2():
     assert (deviation([-2, 4, 8, 10]) == 4.58257569495584)
+
+
 def test_standarddev_repeating():
     assert (deviation([20, 20, 20, 20, 20, 20, 20]) == 0)
