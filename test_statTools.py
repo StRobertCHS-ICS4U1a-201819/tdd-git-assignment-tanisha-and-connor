@@ -83,3 +83,5 @@ def test_standarddev_negative1():
     with pytest.raises(ValueError) as errmsg:
         deviation([-50, -100, 20])
     assert("Illegal negative mean" == str(errmsg.value))
+def test_standarddev_negative2():
+    assert (deviation([-2, 4, 8, 10]) == 4.58257569495584)
