@@ -77,4 +77,5 @@ def test_standarddev_empty():
     assert ("Illegal empty list" == str(errmsg.value))
 def test_standarddev_corner():
     assert(deviation([0]) == 0)
-
+def test_standarddev_one():
+    assert (deviation([100000]) == 0)
