@@ -69,6 +69,6 @@ def test_variance_repeating():
 
 def test_standarddev_basic1():
     assert (deviation([45, 20, 15, 75, 100]) == 32.46536616149585)
-
-
+def test_standarddev_basic2():
+    assert (deviation([0, 20, 40, 20]) == 14.142135623730951)
 

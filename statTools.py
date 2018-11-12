@@ -43,4 +43,5 @@ def avgvariance(variancelist):
     return variance
 
 def deviation(devlist):
-    return 32.46536616149585
+    standard_deviation = avgvariance(devlist) ** 0.5
+    return standard_deviation
