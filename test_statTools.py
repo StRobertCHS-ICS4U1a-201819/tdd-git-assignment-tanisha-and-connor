@@ -79,3 +79,7 @@ def test_standarddev_corner():
     assert(deviation([0]) == 0)
 def test_standarddev_one():
     assert (deviation([100000]) == 0)
+def test_standarddev_negative1():
+    with pytest.raises(ValueError) as errmsg:
+        deviation([-50, -100, 20])
+    assert("Illegal negative mean" == str(errmsg.value))
